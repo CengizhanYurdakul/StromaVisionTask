@@ -1,0 +1,11 @@
+path:  /home/cengizhan/Desktop/YOLO APP/StromaVisionTask/datasets
+train: test
+test: test
+val: test
+
+#Classes
+nc: 2 # replace according to your number of classes
+
+#classes names
+#replace all class names list with your classes names
+names: ['bolt', 'nut']
