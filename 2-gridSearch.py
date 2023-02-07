@@ -3,7 +3,7 @@ import argparse
 
 def train(args):
     """
-    
+    Follows some predetermined parameters during the training
     """
 
     for optimizer in args.optimizers:
