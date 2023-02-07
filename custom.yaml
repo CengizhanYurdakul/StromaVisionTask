@@ -1,0 +1,8 @@
+path:  /home/cengizhan/Desktop/YOLO APP/StromaVisionTask/datasets
+train: train
+test: test
+val: val
+
+#Classes
+nc: 2
+names: ['bolt', 'nut']
