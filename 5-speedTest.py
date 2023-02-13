@@ -37,22 +37,20 @@ def profileTRT(args):
     times = []
     for i in range(200):
         if i < 10:
-            _ = Engine(random_input)
+            _ = Engine(random_input.half())
         else:
             s = time.time()
-            _ = Engine(random_input)
+            _ = Engine(random_input.half())
             times.append(time.time()-s)
         
     meanTime = np.mean(times)
     return meanTime
 
-
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("-to", "--torchPath", default="runs/detect/Optimizer-Adam_LR-0.01_Pretrained-False_Augmentation-False/weights/best.pt", help="Weights of converted Torch model")
-    parser.add_argument("-t", "--trtPath", default="runs/detect/Optimizer-Adam_LR-0.01_Pretrained-False_Augmentation-False/weights/best.engine", help="Weights of converted TRT model")
-    parser.add_argument("-o", "--onnxPath", default="runs/detect/Optimizer-Adam_LR-0.01_Pretrained-False_Augmentation-False/weights/best.onnx", help="Weights of converted Onnx model")
+    parser.add_argument("-to", "--torchPath", default="runs/detect/Optimizer-Adam_LR-0.01_Pretrained-True_Augmentation-True/weights/best.pt", help="Weights of converted Torch model")
+    parser.add_argument("-t", "--trtPath", default="runs/detect/Optimizer-SGD_LR-0.001_Pretrained-True_Augmentation-True/weights/best.engine", help="Weights of converted TRT model")
+    parser.add_argument("-o", "--onnxPath", default="runs/detect/Optimizer-Adam_LR-0.01_Pretrained-True_Augmentation-True/weights/best.onnx", help="Weights of converted Onnx model")
     args = parser.parse_args()
     
     meanOnnx = profileOnnx(args)
