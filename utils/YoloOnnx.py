@@ -34,11 +34,11 @@ class YOLOv8:
         # Perform inference on the image
         
         if self.counter < 10:
-            outputs = self.inference(input_tensor.astype(np.float16))
+            outputs = self.inference(input_tensor)
             self.counter += 1
         else:
             s = time.time()
-            outputs = self.inference(input_tensor.astype(np.float16))
+            outputs = self.inference(input_tensor)
             self.times.append(time.time()-s)
             
 
